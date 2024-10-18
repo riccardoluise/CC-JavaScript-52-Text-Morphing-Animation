@@ -1,41 +1,73 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900&display=swap');
 
-body {
-	margin: 0px;
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+}
+
+#app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#animation-area {
+    flex-grow: 1;
     background: #000;
+    position: relative;
+    overflow: hidden;
 }
 
 #container {
-	position: absolute;
-	margin: auto;
-	width: 100vw;
-	height: 80pt;
-	top: 0;
-	bottom: 0;
-	filter: url(#threshold) blur(0.6px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: url(#threshold) blur(0.6px);
 }
 
 #text1, #text2 {
-	position: absolute;
-	width: 100%;
-	display: inline-block;
+    position: absolute;
+    width: 100%;
+    display: inline-block;
     color: #fff;
-	font-family: 'Raleway', sans-serif;
-	font-size: 80px;
-	font-weight: 400;  /* Normal weight for regular text */
-	text-align: center;
-	user-select: none;
+    font-size: 80px;
+    font-weight: 400;
+    text-align: center;
+    user-select: none;
 }
 
-#text1 b, #text2 b {
-    font-weight: 900;  /* Extra bold weight for bold text */
+#text1 b, #text2 b { font-weight: 900; }
+#text1 i, #text2 i { font-style: italic; font-weight: 700; }
+#text1 b i, #text2 b i { font-weight: 900; }
+
+#controls-area {
+    background: #333;
+    padding: 10px;
+    color: #fff;
 }
 
-#text1 i, #text2 i {
-    font-style: italic;
-    font-weight: 700;  /* Bold italic for more distinction */
+.slider-container {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 
-#text1 b i, #text2 b i {
-    font-weight: 900;  /* Extra bold italic */
+label {
+    width: 120px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+input[type="range"] {
+    flex-grow: 1;
+}
+
+span.value {
+    width: 40px;
+    text-align: right;
+    margin-left: 10px;
 }
