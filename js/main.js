@@ -6,13 +6,8 @@ const elts = {
 
 // The strings to morph between. You can change these to anything you want!
 const texts = [
-	"Why",
-	"do",
-	"you",
-	"watch",
-	"Crazy",
-	"Coding",
-	"channel?"
+	"A",
+	"a",
 ];
 
 // Controls the speed of morphing.
