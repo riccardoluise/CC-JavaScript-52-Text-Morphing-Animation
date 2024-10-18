@@ -1,13 +1,14 @@
-
 const elts = {
 	text1: document.getElementById("text1"),
 	text2: document.getElementById("text2")
 };
 
-// The strings to morph between. You can change these to anything you want!
+// The strings to morph between. Only using the letter "A" with different styles.
 const texts = [
 	"A",
-	"a",
+	"<b>A</b>",
+    "<i>A</i>",
+    "<b><i>A</i></b>"
 ];
 
 // Controls the speed of morphing.
@@ -19,8 +20,8 @@ let time = new Date();
 let morph = 0;
 let cooldown = cooldownTime;
 
-elts.text1.textContent = texts[textIndex % texts.length];
-elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+elts.text1.innerHTML = texts[textIndex % texts.length];
+elts.text2.innerHTML = texts[(textIndex + 1) % texts.length];
 
 function doMorph() {
 	morph -= cooldown;
@@ -38,7 +39,7 @@ function doMorph() {
 
 // A lot of the magic happens here, this is what applies the blur filter to the text.
 function setMorph(fraction) {
-	// fraction = Math.cos(fraction * Math.PI) / -2 + .5;
+// fraction = Math.cos(fraction * Math.PI) / -2 + .5;
 	
 	elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
 	elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
@@ -47,8 +48,8 @@ function setMorph(fraction) {
 	elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
 	elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
 	
-	elts.text1.textContent = texts[textIndex % texts.length];
-	elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+	elts.text1.innerHTML = texts[textIndex % texts.length];
+	elts.text2.innerHTML = texts[(textIndex + 1) % texts.length];
 }
 
 function doCooldown() {

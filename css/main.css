@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900&display=swap');
 
 body {
 	margin: 0px;
@@ -22,6 +22,20 @@ body {
     color: #fff;
 	font-family: 'Raleway', sans-serif;
 	font-size: 80px;
+	font-weight: 400;  /* Normal weight for regular text */
 	text-align: center;
 	user-select: none;
+}
+
+#text1 b, #text2 b {
+    font-weight: 900;  /* Extra bold weight for bold text */
+}
+
+#text1 i, #text2 i {
+    font-style: italic;
+    font-weight: 700;  /* Bold italic for more distinction */
+}
+
+#text1 b i, #text2 b i {
+    font-weight: 900;  /* Extra bold italic */
 }
